@@ -12,18 +12,20 @@ body {
     align-items: center;
     text-align: center;
     justify-content: center;
-    height: 85vh;
+    height: 100vh;
     margin: 0;
 }
 
 .header {
-    width: 280px;
+    position: absolute;
+    top: 115px;
+    width: 279px;
     margin-bottom: 25px;
 }
 
 .controls {
     position: absolute;
-    top: 100px;
+    top: 190px;
     background-color: #bdbdbd;
     width: 280px;
     height: 200px;
