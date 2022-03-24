@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="initGame()">
+    <img src="img/minesweeper.jpg" class="header">
+
+    <div class="controls">
+        <button class="resetBtn" onclick="initGame()"></button>
+        <span class="timer">000</span>
+        <h1 class="lives"></h1>
+        <div class="selectLevel">
+            <button data-size="4" data-mines="2" onclick="selectLevel(this)">EASY</button>
+            <button data-size="8" data-mines="12" onclick="selectLevel(this)">INTERMEDIATE</button>
+            <button data-size="12" data-mines="30" onclick="selectLevel(this)">EXPERT</button>
+        </div>
+    </div>
+    <div class="game-container" oncontextmenu="disableContextMenu(event)"></div>
+    
+    <script src="js/utils.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

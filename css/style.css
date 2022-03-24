@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #686de0; 
+    font-family: 'Roboto', sans-serif ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 85vh;
+    margin: 0;
+}
+
+.header {
+    width: 280px;
+    margin-bottom: 25px;
+}
+
+.controls {
+    position: absolute;
+    top: 100px;
+    background-color: #bdbdbd;
+    width: 280px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 2px;
+    border: ridge;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resetBtn {
+    background: url(../img/reset.png) 5px 5px;
+    background-repeat: no-repeat;
+    background-color: white;
+    width: 42px;
+    height: 42px;
+    position: relative;
+    top: 138px;
+    left: 24px;
+    /* border: solid 2px grey; */
+    border: none;
+    border-radius: 30px;
+    box-shadow: 5px 3px 20px rgb(0 0 0 / 27%), 3px 3px 6px rgb(0 0 0 / 11%);
+}
+
+.resetBtn:active {
+    transform: scale(0.98);
+}
+
+.timer {
+    position: relative;
+    left: 70px;
+    top: 48px;
+    border: solid 2px #686de0;
+    padding: 5px;
+}
+
+.lives {
+    position: relative;
+    left: 21px;
+    top: 1px;
+    background: url(../img/heart.png);
+    background-repeat: none;
+    width: 96px;
+    height: 30px;
+}
+
+.selectLevel {
+    position: relative;
+    top: -105px;
+    left: 1px;
+}
+
+.selectLevel button {
+    background-color: #686ce07a; 
+    border-radius: 2px;
+    margin: 2px;
+    border: none;
+}
+
+.selectLevel button:active {
+    transform: scale(0.98);
+}
+
+.selected{
+    outline: yellow solid;
+}
+
+.unSelected {
+    outline: none;
+}
+
+table {
+    position: relative;
+    top: 50px;
+    border: 1px grey ridge;
+    border-collapse: collapse;
+    margin: 20px;
+    box-shadow: 4px 2px 20px rgb(0 0 0 / 10%), 3px 4px 6px rgb(0 0 0 / 10%);
+}
+
+td {
+    width: 16px;
+    height: 16px;
+    padding: 0px;
+}
+
+.close {background: url(../img/sprite.gif) 0px -39px;}
+.open {background: url(../img/sprite.gif) 0px -23px;}
+
+.flag {background: url(../img/sprite.gif) -16px -39px;}
+
+.mine.open {background: url(../img/sprite.gif) -64px -39px;}
+
+.mine.death.open {background: url(../img/sprite.gif) -32px -39px;}
+
+.open1.open {background: url(../img/sprite.gif) -16px -23px; }
+.open2.open {background: url(../img/sprite.gif) -32px -23px;}
+.open3.open {background: url(../img/sprite.gif) -48px -23px;}
+.open4.open {background: url(../img/sprite.gif) -64px -23px;}
+.open5.open {background: url(../img/sprite.gif) -80px -23px;}
+.open6.open {background: url(../img/sprite.gif) -96px -23px;}
+.open7.open {background: url(../img/sprite.gif) -112px -23px;}
+.open8.open {background: url(../img/sprite.gif) -128px -23px;}
+
