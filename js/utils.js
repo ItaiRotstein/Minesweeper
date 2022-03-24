@@ -5,24 +5,20 @@ function renderBoard(gBoard) {
     for (var i = 0; i < gBoard.length; i++) {
         strHTML += `<tr>\n`
         for (var j = 0; j < gBoard[0].length; j++) {
-            var cell = gBoard[i][j]
             var className = `close`
-            if (cell.isMine) className += ` mine`
-            if (cell.minesAroundCount > 0) className += ` open${cell.minesAroundCount}`
             var id = `cell-${i}-${j}`
             strHTML += `<td id="${id}" class="${className}" onclick="cellClicked(this)" oncontextmenu="cellMarked(this)"></td>\n`
         }
         strHTML += `</tr>\n`
     }
     strHTML += `</tbody>\n</table>`
-    // console.log(strHTML);
     var elContainer = document.querySelector('.game-container')
     elContainer.innerHTML = strHTML
 }
 
-function renderCell(cellPos) {
+function renderCell(cellPos, className) {
     var elCell = document.querySelector(`#cell-${cellPos.i}-${cellPos.j}`)
-    elCell.classList.add('open')  
+    elCell.classList.add(className)  
 }
 
 function getRandomInt(min, max) {
