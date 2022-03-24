@@ -1,2 +1,2 @@
 # Minesweeper
-The original Microsoft Minesweeper game, plus Lives feature add-on
+The original Microsoft Minesweeper game, plus new features
