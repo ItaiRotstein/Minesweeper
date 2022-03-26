@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 * {
     box-sizing: border-box;
@@ -7,12 +8,9 @@
 
 
 body {
-    /* background-color: #686de0;  */
     font-family: 'Roboto', sans-serif ;
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
-    /* text-align: center; */
     justify-content: center;
     height: 100vh;
     margin: 0;
@@ -22,9 +20,8 @@ body {
     background-color: #2b88f0;
     border: solid 2px black;
     border-radius: 5px;
-    width: 500px;
+    width: 450px;
     height: 550px;
-    /* display: flex; */
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -33,17 +30,17 @@ body {
 
 .header {
     position: relative;
-    top: 21px;
+    top: 16px;
     width: 279px;
     margin-bottom: 0px;
+    border-radius: 3px;
 }
 
 .controls {
-    /* position: absolute; */
     top: 77px;
     left: 165px;
     background-color: #bdbdbd;
-    width: 479px;
+    width: 427px;
     height: 220px;
     margin: 10px;
     border-radius: 2px;
@@ -58,8 +55,8 @@ body {
     width: 42px;
     height: 42px;
     position: relative;
-    top: 138px;
-    left: 28px;
+    top: 147px;
+    left: 43px;
     border: none;
     border-radius: 30px;
     box-shadow: 2px 1px 10px rgb(0 0 0 / 27%), 3px 3px 6px rgb(0 0 0 / 11%);
@@ -70,11 +67,12 @@ body {
 }
 
 .timer {
+    font-family: 'Press Start 2P', sans-serif ;
     position: relative;
-    left: 138px;
+    left: 113px;
     top: 156px;
     padding: 5px;
-    font-size: 26px;
+    font-size: 23px;
 }
 
 .lives {
@@ -93,24 +91,27 @@ body {
 }
 
 .select-level button {
+    font-family: 'Press Start 2P', sans-serif ;
     background-color: #2b88f0;
     color: white;
-    height: 25px;
-    font-size: 15px;
-    font-weight: bold;
+    height: 34px;
+    font-size: 11px;
     border-radius: 5px;
-    margin: 0px 32px;
+    margin: 0px 17px;
     border: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.050), 0 1px 1px rgba(0, 0, 0, 0.050);
+    padding: 8px;
+    box-shadow: 2px 3px 5px rgb(0 0 0 / 41%), 0 1px 1px rgb(0 0 0 / 5%);
+
 }
 
 .select-level button:active {transform: scale(0.98);}
 
 .best-time {
+    font-family: 'Press Start 2P', sans-serif ;
     position: relative;
     margin-top: 5px;
-    top: 165px;
-    left: 168px;
+    top: 163px;
+    left: 137px;
     margin-bottom: 0px;
 }
 
@@ -126,80 +127,66 @@ body {
 
 .btn-controls {
     position: relative;
-    top: -55px;
+    top: -74px;
 }
 
 .btn-controls button {
+    font-family: 'Press Start 2P', sans-serif ;
     background-color: #010080;
     height: 25px;
     color: white;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 10px;
     border-radius: 5px;
-    margin: 0px 19px;
+    margin: 0px 12px;
     border: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.050), 0 1px 1px rgba(0, 0, 0, 0.050);
+    box-shadow: 2px 3px 5px rgb(0 0 0 / 41%), 0 1px 1px rgb(0 0 0 / 5%);
 }
 
 .btn-controls button:active {transform: scale(0.98);}
-
-.hint-btn {
-    /* position: relative;
-    bottom: 173px;
-    left: -43px; */
-}
-
-.safe-click-btn {
-    /* position: relative;
-    bottom: 152px;
-    left: 69px; */
-}
-
-.undo-btn {
-    /* position: relative;
-    top: -5px;
-    left: 47px; */
-}
-
-.manual-mode-btn {
-    /* position: relative;
-    bottom: 151px;
-    left: 137px; */
-}
 
 .manual-mode {
     display: none;
     background-color: #bdbdbd;
     border: ridge;
     position: relative;
-    bottom: 215px;
-    left: 115px;
-    width: 250px;
-    height: 80px;
-    padding: 0px;
+    bottom: 125px;
+    left: 10px;
+    width: 402px;
+    height: 115px;
+    padding: 15px;
+    font-size: 32px;
 }
 
 .mines-remain {
     font-size: 18px;
 }
 
+.footer {
+    position: relative;
+    background-color: #010080;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    width: 449px;
+    left: -15px;
+    bottom: -316px;
+    border: black solid 1px;
+    border-radius: 3px;
+    border-bottom: none;
+}
+
 
 .game-container {
+    top: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* top: 900px; */
-    /* text-align: center; */
-    /* justify-content: center; */
-    /* position: relative; */
 }
 
 table {
-    /* position: relative; */
-    /* top: 141px; */
     border: 1px grey ridge;
     border-collapse: collapse;
-    margin: 10px;
+    margin: 5px;
     box-shadow: 4px 2px 20px rgb(0 0 0 / 10%), 3px 4px 6px rgb(0 0 0 / 10%);
 }
 
@@ -210,8 +197,6 @@ td {
     background: url(../img/sprite.gif) 0px -39px
 }
 
-
-/* .close {background: url(../img/sprite.gif) 0px -39px;} */
 .open {background: url(../img/sprite.gif) 0px -23px;}
 
 .flag {background: url(../img/sprite.gif) -16px -39px;}

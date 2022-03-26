@@ -37,7 +37,6 @@ var gIsSetManualMode
 var gIsManulModeOn
 var gManualModeMinesRemain
 var gUndoCells
-var gRecordedMoves
 
 function initGame() {
     gPositions = createPositions()
@@ -65,7 +64,6 @@ function initGame() {
     clearInterval(gTimerInterval)
     gElTimer.innerText = '000'
     gUndoCells = []
-    gRecordedMoves = []
 }
 
 function selectLevel(selectBtn) {
@@ -217,7 +215,7 @@ function countMinesAround(Ipos, Jpos) {
 }
 
 function expandShown(Ipos, Jpos) {
-
+    var recordedMoves = []
     for (var i = Ipos - 1; i <= Ipos + 1; i++) {
         if (i < 0 || i > gBoard.length - 1) continue
         for (var j = Jpos - 1; j <= Jpos + 1; j++) {
@@ -229,13 +227,12 @@ function expandShown(Ipos, Jpos) {
                 checkVictory()
                 var cellPos = { i, j }
                 renderCell(cellPos, 'open')
-                gRecordedMoves.push(cellPos)
+                recordedMoves.push(cellPos)
                 if (cell.minesAroundCount === 0) expandShown(cellPos.i, cellPos.j)
             }
         }
     }
-    gUndoCells.push(gRecordedMoves)
-
+    gUndoCells.push(recordedMoves)
 }
 
 function cellMarked(elCell) {
@@ -275,7 +272,7 @@ function setBestTime() {
         localStorage.setItem('bestTime', newBestTime)
         gElBestTime.innerText = `BEST TIME: ${newBestTime}`
         gElBestTime.style.opacity = 100 + '%'
-    } 
+    }
 }
 
 function minusLives(pos) {
@@ -346,7 +343,7 @@ function revealNegs(Ipos, Jpos) {
             negs.push(cell)
 
             var elCell = document.querySelector(`#cell-${i}-${j}`)
-            elCell.style.border = 'yellow solid 1px'
+            elCell.style.border = 'yellow solid 2px'
             elCell.classList.add('open')
             setTimeout(() => {
                 closeNegs(negs)
@@ -366,41 +363,36 @@ function closeNegs(negs) {
 }
 
 function setSafeClickOn() {
-
     if (!gIsFirstClick || gIsSafeClickOn || gGame.safeClicksRemain === 0 || !gGame.isOn) return
     gIsSafeClickOn = true
-    showRandomCell()
+    findRandomCell()
     gGame.safeClicksRemain--
     gElSafeClick.innerText = `SAFE: ${gGame.safeClicksRemain}`
 }
 
-function showRandomCell() {
-    var randPos = { i: getRandomInt(0, gBoard.length), j: getRandomInt(0, gBoard.length) }
-
-    while (gBoard[randPos.i][randPos.j].isMine
-        || gBoard[randPos.i][randPos.j].isShown) {
-        for (var i = 0; i < gBoard.length; i++) {
-            for (var j = 0; j < gBoard.length; j++) {
-                if (!gBoard[i][j].isShown) {
-                    randPos.i = i
-                    randPos.j = j
-                }
+function findRandomCell() {
+    var safeCells = []
+    for (var i = 0; i < gBoard.length; i++) {
+        for (var j = 0; j < gBoard.length; j++) {
+            if (!gBoard[i][j].isShown && !gBoard[i][j].isMine) {
+                var cell = { i, j }
+                safeCells.push(cell)
             }
         }
     }
-
-    var elCell = document.querySelector(`#cell-${randPos.i}-${randPos.j}`)
-    elCell.style.border = 'yellow solid 1px'
-    elCell.classList.add('open')
-    setTimeout(() => {
-        closeRandomCell(elCell)
-    }, 2000)
+    var randPos = drawPos(safeCells)
+    showRandomCell(randPos)
 }
 
-function closeRandomCell(elCell) {
-    elCell.style.border = 'none'
-    elCell.classList.remove('open')
-    gIsSafeClickOn = false
+function showRandomCell(randPos) {
+    var elCell = document.querySelector(`#cell-${randPos.i}-${randPos.j}`)
+    elCell.style.border = 'yellow solid 2px'
+    elCell.classList.add('open')
+    setTimeout(() => {
+        elCell.style.border = 'none'
+        renderCellRemoveClass(randPos, 'open')
+        gIsSafeClickOn = false
+    }, 2000)
 }
 
 function setManualMode() {
