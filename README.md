@@ -1,2 +1,2 @@
 # Minesweeper
-The original Microsoft Minesweeper game, plus new features
+The Minesweeper game, plus new features
