@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,23 +8,35 @@
     <title>Minesweeper</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body onload="initGame()">
-    
-    <img src="img/minesweeper.jpg" class="header">
-    <h3 class="bestTime"></h3>
-    <div class="controls">
-        <button class="resetBtn" onclick="initGame()"></button>
-        <span class="timer">000</span>
-        <h1 class="lives"></h1>
-        <div class="selectLevel">
-            <button data-size="4" data-mines="2" onclick="selectLevel(this)">EASY</button>
-            <button data-size="8" data-mines="12" onclick="selectLevel(this)">INTERMEDIATE</button>
-            <button data-size="12" data-mines="30" onclick="selectLevel(this)">EXPERT</button>
+
+    <div class="container">
+        <img src="img/minesweeper.jpg" class="header">
+        <h3 class="best-time">BestTime</h3>
+        <div class="controls">
+            <button class="reset-btn" onclick="initGame()"></button>
+            <span class="timer"></span>
+            <div class="lives"></div>
+            <div class="select-level">
+                <button data-size="4" data-mines="2" onclick="selectLevel(this)">EASY</button>
+                <button data-size="8" data-mines="12" onclick="selectLevel(this)">INTERMEDIATE</button>
+                <button data-size="12" data-mines="30" onclick="selectLevel(this)">EXPERT</button>
+            </div>
+            <div class="hints-remain"></div>
+            <div class="btn-controls">
+                <button class="hint-btn" onclick="setHintOn()">HINT</button>
+                <button class="safe-click-btn" onclick="setSafeClickOn()">SAFE</button>
+                <button class="undo-btn" onclick="setUndo()">UNDO</button>
+                <button class="manual-mode-btn" onclick="setManualMode()">MANUAL MODE</button>
+                <h2 class="manual-mode">Set Mines Manually <br><span class="mines-remain"></span></h2>
+            </div>
         </div>
+        <div class="game-container" oncontextmenu="disableContextMenu(event)"></div>
     </div>
-    <div class="game-container" oncontextmenu="disableContextMenu(event)"></div>
-    
+
     <script src="js/utils.js"></script>
     <script src="js/game.js"></script>
 </body>
+
 </html>

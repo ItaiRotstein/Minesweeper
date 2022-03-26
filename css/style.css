@@ -4,38 +4,54 @@
     box-sizing: border-box;
 }
 
+
+
 body {
-    background-color: #686de0; 
+    /* background-color: #686de0;  */
     font-family: 'Roboto', sans-serif ;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
-    text-align: center;
+    /* text-align: center; */
     justify-content: center;
     height: 100vh;
     margin: 0;
 }
 
+.container {
+    background-color: #2b88f0;
+    border: solid 2px black;
+    border-radius: 5px;
+    width: 500px;
+    height: 550px;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
 .header {
-    position: absolute;
-    top: 115px;
+    position: relative;
+    top: 21px;
     width: 279px;
-    margin-bottom: 25px;
+    margin-bottom: 0px;
 }
 
 .controls {
-    position: absolute;
-    top: 190px;
+    /* position: absolute; */
+    top: 77px;
+    left: 165px;
     background-color: #bdbdbd;
-    width: 280px;
-    height: 200px;
+    width: 479px;
+    height: 220px;
     margin: 10px;
     border-radius: 2px;
     border: ridge;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
 }
 
-.resetBtn {
+.reset-btn {
     background: url(../img/reset.png) 5px 5px;
     background-repeat: no-repeat;
     background-color: white;
@@ -49,14 +65,14 @@ body {
     box-shadow: 2px 1px 10px rgb(0 0 0 / 27%), 3px 3px 6px rgb(0 0 0 / 11%);
 }
 
-.resetBtn:active {
+.reset-btn:active {
     transform: scale(0.98);
 }
 
 .timer {
     position: relative;
-    left: 70px;
-    top: 56px;
+    left: 138px;
+    top: 156px;
     padding: 5px;
     font-size: 26px;
 }
@@ -64,45 +80,126 @@ body {
 .lives {
     position: relative;
     left: 21px;
-    top: 1px;
+    top: 123px;
     background: url(../img/heart.png);
     background-repeat: none;
     width: 96px;
     height: 30px;
 }
 
-.selectLevel {
+.select-level {
     position: relative;
-    top: -105px;
-    left: 1px;
+    top: -60px;
 }
 
-.selectLevel button {
-    background-color: #686ce07a; 
+.select-level button {
+    background-color: #2b88f0;
+    color: white;
+    height: 25px;
     font-size: 15px;
     font-weight: bold;
-    border-radius: 2px;
-    margin: 2px;
+    border-radius: 5px;
+    margin: 0px 32px;
     border: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.050), 0 1px 1px rgba(0, 0, 0, 0.050);
 }
 
-.selectLevel button:active {
-    transform: scale(0.98);
+.select-level button:active {transform: scale(0.98);}
+
+.best-time {
+    position: relative;
+    margin-top: 5px;
+    top: 165px;
+    left: 168px;
+    margin-bottom: 0px;
 }
 
-.bestTime {
-    margin-top: 5px;
-    position: absolute;
-    top: 162px;
+.hints-remain {
+    position: relative;
+    bottom: -19px;
+    left: 20px;
+    background: url(../img/bulb.png);
+    background-repeat: none;
+    width: 96px;
+    height: 30px;
+}
+
+.btn-controls {
+    position: relative;
+    top: -55px;
+}
+
+.btn-controls button {
+    background-color: #010080;
+    height: 25px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 0px 19px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.050), 0 1px 1px rgba(0, 0, 0, 0.050);
+}
+
+.btn-controls button:active {transform: scale(0.98);}
+
+.hint-btn {
+    /* position: relative;
+    bottom: 173px;
+    left: -43px; */
+}
+
+.safe-click-btn {
+    /* position: relative;
+    bottom: 152px;
+    left: 69px; */
+}
+
+.undo-btn {
+    /* position: relative;
+    top: -5px;
+    left: 47px; */
+}
+
+.manual-mode-btn {
+    /* position: relative;
+    bottom: 151px;
+    left: 137px; */
+}
+
+.manual-mode {
+    display: none;
+    background-color: #bdbdbd;
+    border: ridge;
+    position: relative;
+    bottom: 215px;
+    left: 115px;
+    width: 250px;
+    height: 80px;
+    padding: 0px;
+}
+
+.mines-remain {
+    font-size: 18px;
+}
+
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* top: 900px; */
+    /* text-align: center; */
+    /* justify-content: center; */
+    /* position: relative; */
 }
 
 table {
-    position: relative;
-    top: 50px;
+    /* position: relative; */
+    /* top: 141px; */
     border: 1px grey ridge;
     border-collapse: collapse;
-    margin: 20px;
+    margin: 10px;
     box-shadow: 4px 2px 20px rgb(0 0 0 / 10%), 3px 4px 6px rgb(0 0 0 / 10%);
 }
 
@@ -110,9 +207,11 @@ td {
     width: 16px;
     height: 16px;
     padding: 0px;
+    background: url(../img/sprite.gif) 0px -39px
 }
 
-.close {background: url(../img/sprite.gif) 0px -39px;}
+
+/* .close {background: url(../img/sprite.gif) 0px -39px;} */
 .open {background: url(../img/sprite.gif) 0px -23px;}
 
 .flag {background: url(../img/sprite.gif) -16px -39px;}
@@ -129,4 +228,5 @@ td {
 .open6.open {background: url(../img/sprite.gif) -96px -23px;}
 .open7.open {background: url(../img/sprite.gif) -112px -23px;}
 .open8.open {background: url(../img/sprite.gif) -128px -23px;}
+
 
